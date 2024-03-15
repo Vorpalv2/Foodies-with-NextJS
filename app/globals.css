@@ -59,3 +59,8 @@ svg {
   font-weight: 500;
   color: #ddd8d8;
 }
+
+.isActive {
+  color: purple;
+  background-color: #262626;
+}

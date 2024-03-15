@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logoImg from "@/assets/logo.png";
-import styles from "@/components/static/mainheader.module.css";
+import styles from "@/components/static/mainheader/mainheader.module.css";
 import { usePathname } from "next/navigation";
 
 const navData = [
@@ -31,7 +31,7 @@ export default function MainHeader() {
             return (
               <li key={index}>
                 <Link
-                  className={`${isActive ? "text-blue-500" : "text-white"}`}
+                  className={`${isActive && styles["active"]}`}
                   href={element.navLink}
                 >
                   {element.navName}

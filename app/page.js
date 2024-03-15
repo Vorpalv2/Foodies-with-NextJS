@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ImageSlideshow from "@/components/static/images/image-slideshow.jsx";
 
 import styles from "@/app/page.module.css";
 
@@ -6,7 +7,9 @@ export default function Home() {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.slideshow}></div>
+        <div className={styles.slideshow}>
+          <ImageSlideshow />
+        </div>
         <div>
           <div className={styles.hero}>
             <h1>NextLevel Food for NextLevel Foodies</h1>
