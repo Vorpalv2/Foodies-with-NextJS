@@ -1,6 +1,7 @@
 import React from "react";
-import classes from "@/app/(root)/meals/page.module.css";
 import Link from "next/link";
+import Mealsgrid from "@/components/static/meals/meals-grid";
+import classes from "@/app/(root)/meals/page.module.css";
 
 const MealsPage = () => {
   return (
@@ -17,7 +18,9 @@ const MealsPage = () => {
           <Link href={"/meals/share"}>Share Your Recipe</Link>
         </p>
       </header>
-      <main className={classes.main}></main>
+      <main className={classes.main}>
+        <Mealsgrid meals={[]} />
+      </main>
     </>
   );
 };
