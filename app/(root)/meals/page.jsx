@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-import Link from "next/link";
 import Mealsgrid from "@/components/static/meals/meals-grid";
 import classes from "@/app/(root)/meals/page.module.css";
 import { getMeals } from "@/lib/meals";
