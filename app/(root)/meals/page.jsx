@@ -1,12 +1,20 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import Mealsgrid from "@/components/static/meals/meals-grid";
 import classes from "@/app/(root)/meals/page.module.css";
 import { getMeals } from "@/lib/meals";
+import susclasses from "@/app/(root)/meals/loading.module.css";
+
+const MealsthroughDB = async () => {
+  const data = await getMeals();
+  return <Mealsgrid meals={data} />;
+};
+
+const LoadMeals = () => (
+  <h2 className={susclasses.loading}>Loading Meals...</h2>
+);
 
 const MealsPage = async () => {
-  const data = await getMeals();
-
   return (
     <>
       <header className={classes.header}>
@@ -17,13 +25,12 @@ const MealsPage = async () => {
         <p>
           Choose your favorite recipe and cook it yourself. It is easy and fun!
         </p>
-        <p className={classes.cta}>
-          <Link href={"/meals/share"}>Share Your Recipe</Link>
-        </p>
       </header>
-      <main className={classes.main}>
-        <Mealsgrid meals={data} />
-      </main>
+      <Suspense fallback={<LoadMeals />}>
+        <main className={classes.main}>
+          <MealsthroughDB />
+        </main>
+      </Suspense>
     </>
   );
 };
