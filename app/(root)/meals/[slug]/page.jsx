@@ -6,6 +6,8 @@ import { getMeal } from "@/lib/meals";
 const CustomIDPage = ({ params }) => {
   const meal = getMeal(params.slug);
 
+  meal.instructions = meal.instructions.replace(/\n/g, `<br />`);
+
   return (
     <>
       <header className={classes.header}>
