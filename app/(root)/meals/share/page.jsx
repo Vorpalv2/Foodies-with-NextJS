@@ -1,4 +1,4 @@
-import ImagePicker from "@/components/static/imagePicker/ImagePicker";
+import ImagePicker from "@/components/static/imagePicker/ImagePicker.jsx";
 import classes from "./share.module.css";
 
 export default function ShareMealPage() {
