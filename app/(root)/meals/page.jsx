@@ -3,6 +3,7 @@ import Mealsgrid from "@/components/static/meals/meals-grid";
 import classes from "@/app/(root)/meals/page.module.css";
 import { getMeals } from "@/lib/meals";
 import susclasses from "@/app/(root)/meals/loading.module.css";
+import Link from "next/link";
 
 const MealsthroughDB = async () => {
   const data = await getMeals();
@@ -24,6 +25,9 @@ const MealsPage = async () => {
         <p>
           Choose your favorite recipe and cook it yourself. It is easy and fun!
         </p>
+        <Link href="/meals/share" className={classes.actions}>
+          Share your Favorite Recipe
+        </Link>
       </header>
       <Suspense fallback={<LoadMeals />}>
         <main className={classes.main}>
