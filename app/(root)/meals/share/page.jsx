@@ -1,6 +1,6 @@
 import ImagePicker from "@/components/static/imagePicker/ImagePicker.jsx";
 import classes from "./share.module.css";
-import { handleMealsForm } from "@/lib/meals.serverAction";
+import { handleMealsForm } from "@/lib/action/meals.serverAction";
 
 export default function ShareMealPage() {
   return (
